@@ -10,14 +10,23 @@ $almostBlack: hsl(0, 0%, 8%);
     box-sizing: border-box;
 }
 
-#main {
+#mobile {
+    display: block;
+}
+
+#desktop {
+    display: none;
+}
+
+.main {
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
     position: relative;
+    background-color: $almostWhite;
 }
 
-#main .header {
+.main .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -88,7 +97,8 @@ $almostBlack: hsl(0, 0%, 8%);
 
 .mobile-navigation-title,
 .feature-navigation-title,
-.authentication p {
+.authentication p,
+.desk-authentication p {
     font-size: 16px;
     color: $mediumGray;
     font-family: "Epilogue", sans-serif;
@@ -129,7 +139,8 @@ $almostBlack: hsl(0, 0%, 8%);
     align-items: center;
 }
 
-.authentication p {
+.authentication p,
+.desk-authentication p {
     font-size: 14px;
     padding: 0.75rem 1rem;
     width: 80%;
@@ -137,7 +148,8 @@ $almostBlack: hsl(0, 0%, 8%);
     text-align: center;
 }
 
-.authentication p:last-child {
+.authentication p:last-child,
+.desk-authentication p:last-child {
     border: 1px solid $mediumGray;
     border-radius: 0.9rem;
 }
@@ -186,7 +198,7 @@ $almostBlack: hsl(0, 0%, 8%);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 .icon-1 img,
@@ -196,4 +208,132 @@ $almostBlack: hsl(0, 0%, 8%);
     width: 100%;
     height: auto;
     transform: scale(0.8);
+}
+
+@media screen and (min-width: 1000px) {
+    #mobile {
+        display: none;
+    }
+
+    #desktop {
+        display: block;
+    }
+
+    .desk-nav {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .desk-logo-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desk-logo-nav .desk-logo {
+        margin-left: 2.5rem;
+        margin-right: 3.5rem;
+        cursor: pointer;
+    }
+
+    .desk-navigation-title {
+        font-size: 18px;
+        color: $mediumGray;
+        font-family: "Epilogue", sans-serif;
+        font-weight: 500;
+        margin: 0 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .desk-navigation-title::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-bottom: 3px solid black;
+        z-index: -1;
+        transition: width 0.5s;
+    }
+
+    .desk-navigation-title:hover::after {
+        width: 100%;
+        animation: border 3s;
+    }
+
+    .desk-navigation-title:hover {
+        color: $almostBlack;
+    }
+
+    .desk-navigation-title img {
+        margin-bottom: 3px;
+    }
+
+    .desk-authentication {
+        display: flex;
+    }
+
+    .desk-authentication p {
+        font-size: 18px;
+        margin-right: 2rem;
+        transition: color 0.5s ease, border 0.5s ease;
+        cursor: pointer;
+    }
+
+    .desk-authentication p:hover {
+        color: $almostBlack;
+    }
+
+    .desk-authentication p:last-child {
+        border: 2px solid $mediumGray;
+    }
+
+    .desk-authentication p:last-child:hover {
+        border: 2px solid $almostBlack;
+    }
+
+    .desktop-feature-modal,
+    .desktop-company-modal {
+        position: absolute;
+        z-index: 3;
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        top: 80%;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        -webkit-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .desktop-company-modal.displayNone,
+    .desktop-feature-modal.displayNone {
+        display: none;
+    }
+
+    .feature-navigation-title,
+    .feature-navigation-title:last-child {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: fit-content;
+    }
+
+    .desktop-feature-modal {
+        right: 80%;
+    }
+
+    .desktop-company-modal {
+        left: 25%;
+    }
+
+    #desktop-feature-arrow,
+    #desktop-company-arrow {
+        transition: transform 0.3s ease;
+    }
 }

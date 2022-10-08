@@ -20,7 +20,7 @@ const toggleCompanyArrow = () => {
 }
 
 const toggleSidebar = () => {
-    sidebarNavigation.style.transform = "translateX(1%)";
+    sidebarNavigation.style.transform = "translateX(2%)";
     sidebarNavigation.style.transition = "all 0.25s ease";
     sidebarTransparent.style.transform = "translateX(0)";
     sidebarTransparent.style.transition = "all 0.25s ease";
@@ -35,3 +35,25 @@ buttonSidebar.addEventListener("click", toggleSidebar);
 sidebarCloseButton.addEventListener("click", closeSidebar);
 featuresNavigation.addEventListener("click", toggleFeatureArrow);
 companyNavigation.addEventListener("click", toggleCompanyArrow);
+
+//DESKTOP
+
+const desktopFeatureArrow = document.querySelector("#desktop-feature-arrow");
+const desktopCompanyArrow = document.querySelector("#desktop-company-arrow");
+const desktopFeatureButton = document.querySelector("#desktop-feature-button");
+const desktopCompanyButton = document.querySelector("#desktop-company-button");
+const desktopFeatureModal = document.querySelector(".desktop-feature-modal");
+const desktopCompanyModal = document.querySelector(".desktop-company-modal");
+
+const openFeatureModal = () => {
+    desktopFeatureArrow.classList.toggle("rotate");
+    desktopFeatureModal.classList.toggle("displayNone");
+}
+
+const openCompanyModal = () => {
+    desktopCompanyArrow.classList.toggle("rotate");
+    desktopCompanyModal.classList.toggle("displayNone");
+}
+
+desktopFeatureButton.addEventListener("click", openFeatureModal);
+desktopCompanyButton.addEventListener("click", openCompanyModal);

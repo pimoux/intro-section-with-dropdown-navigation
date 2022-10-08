@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main id="main" role="main">
+    <main id="mobile" class="main" role="main">
         <header class="header" role="heading">
             <img src="/images/logo.svg" alt="logo" />
             <div class="sidebar"></div>
@@ -72,11 +72,38 @@
             </div>
         </div>
     </main>
-    <!--
-    Get your team in sync, no matter your location. Streamline processes,
-    create team rituals, and watch productivity soar.
-
-    Learn more -->
+    <main id="desktop" class="main" role="main">
+        <nav class="desk-nav">
+            <div class="desk-logo-nav">
+                <img src="/images/logo.svg" alt="logo" class="desk-logo" />
+                <span class="desk-navigation-title" id="desktop-feature-button">Features&nbsp;<img id="desktop-feature-arrow"
+                        src="/images/icon-arrow-up.svg" class="rotate" alt="arrow-icon" /></span>
+                <div class="desktop-feature-modal displayNone">
+                    <span class="feature-navigation-title"><img src="/images/icon-todo.svg" alt="todo" />&nbsp;&nbsp;
+                        Todo List</span>
+                    <span class="feature-navigation-title"><img src="/images/icon-calendar.svg"
+                            alt="calendar" />&nbsp;&nbsp; Calendar</span>
+                    <span class="feature-navigation-title"><img src="/images/icon-reminders.svg"
+                            alt="reminders" />&nbsp;&nbsp; Reminders</span>
+                    <span class="feature-navigation-title"><img src="/images/icon-planning.svg"
+                            alt="planning" />&nbsp;&nbsp; Planning</span>
+                </div>
+                <span class="desk-navigation-title" id="desktop-company-button">Company&nbsp;<img id="desktop-company-arrow"
+                        src="/images/icon-arrow-up.svg" class="rotate" alt="arrow-icon" /></span>
+                <div class="desktop-company-modal displayNone">
+                    <span class="feature-navigation-title">History</span>
+                    <span class="feature-navigation-title">Our Team</span>
+                    <span class="feature-navigation-title">Blog</span>
+                </div>
+                <span class="desk-navigation-title">Careers</span>
+                <span class="desk-navigation-title">About</span>
+            </div>
+            <div class="desk-authentication">
+                <p>Login</p>
+                <p>Register</p>
+            </div>
+        </nav>
+    </main>
     <script src="index.js"></script>
 </body>
 
