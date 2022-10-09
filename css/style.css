@@ -246,7 +246,7 @@
           transform: scale(0.8);
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1440px) {
   #mobile {
     display: none;
   }
@@ -404,6 +404,15 @@
     margin-left: 0;
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+    -webkit-animation: opacity 2s;
+            animation: opacity 2s;
+    -webkit-animation-delay: 0.25s;
+            animation-delay: 0.25s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   .title {
     font-size: 5em;
